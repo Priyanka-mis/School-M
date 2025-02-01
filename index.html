@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <!-- Login Page -->
+    <div class="container" id="loginPage">
+        <h2 class="h2login">Login</h2>
+        <input type="email" id="email" placeholder="Enter your email">
+        <input type="password" id="password" placeholder="Enter your password">
+        <button onclick="login()" class="login">Login</button>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="container hidden" id="dashboard">
+        <h1>Admin Dashboard</h1>
+        <div class="menu">
+            <button onclick="showSection('studentsSection')">Manage Students</button>
+            <button onclick="showSection('teachersSection')">Manage Teachers</button>
+            <button onclick="showSection('attendanceSection')">Attendance</button>
+        </div>
+
+        <!-- Student Management -->
+        <div id="studentsSection" class="hidden">
+            <h2>Student Registration</h2>
+            <input type="text" id="studentName" placeholder="Student Name">
+            <input type="text" id="studentClass" placeholder="Class">
+            <button onclick="addStudent()">Add Student</button>
+            <h3>Student List</h3>
+            <ul id="studentList"></ul>
+        </div>
+
+        <!-- Teacher Management -->
+        <div id="teachersSection" class="hidden">
+            <h2>Teacher Management</h2>
+            <input type="text" id="teacherName" placeholder="Teacher Name">
+            <input type="text" id="subject" placeholder="Subject">
+            <button onclick="addTeacher()">Add Teacher</button>
+            <h3>Teacher List</h3>
+            <ul id="teacherList"></ul>
+        </div>
+
+        <!-- Attendance -->
+        <div id="attendanceSection" class="hidden">
+            <h2>Mark Attendance</h2>
+            <input type="text" id="attendeeName" placeholder="Student Name">
+            <select id="attendanceStatus">
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+            <button onclick="markAttendance()">Mark Attendance</button>
+            <h3>Attendance List</h3>
+            <ul id="attendanceList"></ul>
+        </div>
+
+        <button onclick="logout()">Logout</button>
+    </div>
+
+
+
+</body>
+</html>
